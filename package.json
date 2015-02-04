@@ -17,6 +17,7 @@
     "serve-favicon": "~2.2.0",
 		"express-session":"*",		
 		"connect-mongo":"*",
-    "connect-flash":"*"
+    "connect-flash":"*",
+		"formidable": "*"
   }
 }
