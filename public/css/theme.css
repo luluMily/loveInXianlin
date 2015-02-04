@@ -32,9 +32,13 @@ img {
 .logo img {max-width:100%;
 }
 
+.navbar{
+	margin-bottom: 5px
+}
+
 .follow_us {
 	text-align:right;
-	padding:3px 4px 9px 0;
+	padding:7px 4px 9px 0;
 }
 .follow_us ul li {
 	padding:0;
@@ -43,34 +47,33 @@ img {
 	line-height:30px;
 }
 .follow_us a {
-	background-image:url(../img/top_socials.png);
 	background-repeat:no-repeat;
 	height:30px;
-	width:30px;
+	width:85px;
 	display:block;
 	text-indent:-9999px;
 	text-align:left;
 }
-.follow_us a.facebook {background-position:0 0;
+.follow_us .before_log{
+		background-image:url(../img/log_before.png);
 }
-.follow_us a.facebook:hover {background-position:0 -30px;
+.follow_us .after_log{
+		background-image:url(../img/log_after.png);
 }
-.follow_us a.vimeo {background-position:-35px 0;
+
+.follow_us a.login,
+.follow_us a.account {background-position:0 0;
 }
-.follow_us a.vimeo:hover {background-position:-35px -30px;
+.follow_us a.login:hover,
+.follow_us a.account {background-position:0 -30px;
 }
-.follow_us a.tumbrl {background-position:-70px 0;
+.follow_us a.reg,
+.foller_us a.logout {background-position:-85px 0;
 }
-.follow_us a.tumbrl:hover {background-position:-70px -30px;
+.follow_us a.reg:hover,
+.foller_us a.logout {background-position:-85px -30px;
 }
-.follow_us a.twitter {background-position:-105px 0;
-}
-.follow_us a.twitter:hover {background-position:-105px -30px;
-}
-.follow_us a.delicious {background-position:-140px 0;
-}
-.follow_us a.delicious:hover {background-position:-140px -30px;
-}
+
 
 /*nav*/
 #main_menu {
@@ -78,7 +81,7 @@ img {
 	float:right;
 }
 .menu_wrap {
-  padding-top: 10px;
+  padding-top: 15px;
   float:right;
 }
 .menu_wrap .nav li {
@@ -110,11 +113,14 @@ img {
   padding:0; 
   text-align:left;
 }
-.menu_wrap .nav > li.sfHover > a,
-.menu_wrap .nav > li.sfHover > a:hover,
-.menu_wrap .nav > li > a:hover,
 .menu_wrap .nav > li.current > a,
 .menu_wrap .nav > li.current > a:hover {
+	color: #d00b01;
+	background:none;
+}
+.menu_wrap .nav > li.sfHover > a,
+.menu_wrap .nav > li.sfHover > a:hover,
+.menu_wrap .nav > li > a:hover{
 	color: #c5c5c5;
 	background:none;
 }
@@ -559,9 +565,15 @@ ul.tweets li {
 
 .footer_bottom {
 	background:#1e1e1e;
-	margin-top:20px;
-	padding:23px 0 26px 0;
+	padding:15px 0 10px 0;
 }
+
+.footer_bottom hr{
+	border-top: 1px solid #292929;
+	border-bottom: 1px solid #353535;
+	margin: 12px 0;
+}
+
 .copyright {color:#444444;
 }
 
