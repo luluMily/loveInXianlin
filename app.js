@@ -13,6 +13,7 @@ var formidable = require('formidable');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var activity = require('./routes/activity');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/users',express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
 app.use(session({
@@ -58,6 +60,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/activity', activity);
 
 
 /*--------------start register route ----------------*/

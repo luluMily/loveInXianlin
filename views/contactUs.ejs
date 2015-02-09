@@ -1,0 +1,47 @@
+<% include header.ejs %>
+
+    <!--page_container-->
+    <div class="page_container">
+    	<div class="breadcrumb">
+        	<div class="wrap">
+            	<div class="container">
+                    <a href="index.html">Home</a><span>/</span>Contacts
+                </div>
+            </div>
+        </div>
+    	<div class="wrap">
+        	<div class="container">
+                <section>
+                	<div class="row">
+                    	<div class="span4">
+                        	<h2 class="title"><span>Contact Info</span></h2>
+                            <div id="map"><iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=london&sll=37.0625,-95.677068&sspn=42.631141,90.263672&ie=UTF8&hq=&hnear=London,+United+Kingdom&ll=51.500141,-0.126257&spn=0.026448,0.039396&z=14&output=embed"></iframe></div>
+                            <p>3896 Kenwood Place<br/>Fort Lauderdale, FL 33301</p>
+                            <p>Phone: 1-500-677-5694<br/>Fax: 1-500-256-2768<br/>Email: <a href="mailto:#">info@yoursitename.com</a><br/>Web: <a href="#">http://yoursitename.com</a></p>                           
+                        </div>
+                    	<div class="span8">
+                        	<h2 class="title"><span>Get In Touch</span></h2>
+                            <div class="contact_form">  
+                            	<div id="note"></div>
+                                <div id="fields">
+                                    <form id="ajax-contact-form" action="">
+                                        <input class="span7" type="text" name="name" value="" placeholder="Name (required)" />
+                                        <input class="span7" type="text" name="email" value="" placeholder="Email (required)" />
+                                        <input class="span7" type="text" name="subject" value="" placeholder="Subject" />
+                                        <textarea name="message" id="message" class="span8" placeholder="Message"></textarea>
+                                        <div class="clear"></div>
+                                        <input type="reset" class="btn dark_btn" value="Clear form" />
+                                        <input type="submit" class="btn send_btn" value="Submit" />
+                                        <div class="clear"></div>
+                                    </form>
+                                </div>
+                            </div>                   
+                        </div>                	
+                	</div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--//page_container-->
+
+<% include footer.ejs %>

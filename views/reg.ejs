@@ -1,52 +1,59 @@
 <% include header.ejs %>
-        
-<form class="form-horizontal" method="post">
-<fieldset>
-<legend>User Registration</legend>
-<div class="form-group">
-    <label for="username" class="col-sm-2 control-label">Username</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-      <p class="help-block">Your Account Number</p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password" class="col-sm-2 control-label">密码</label>
-    <div class="col-sm-4">
-      <input type="password" class="form-control" id="password" name="password" placeholder="密码">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password-repeat" class="col-md-2 control-label">确认密码</label>
-    <div class="col-md-4">
-      <input type="password" class="form-control" id="password-repeat" name="password-repeat" placeholder="确认密码">
-    </div>
-  </div>
-	<div class="form-group">
-    <label for="password-repeat" class="col-md-2 control-label">微信号</label>
-    <div class="col-md-4">
-      <input type="text" class="form-control" id="wechat" name="wechat" placeholder="微信号(建议使用小号)">
-    </div>
-  </div>
-	<div class="form-group">
-    <label for="password-repeat" class="col-md-2 control-label">QQ</label>
-    <div class="col-md-4">
-      <input type="text" class="form-control" id="qq" name="qq" placeholder="QQ(建议使用小号)">
-    </div>
-  </div>
-	<div class="form-group">
-    <label for="password-repeat" class="col-md-2 control-label">无图无真相</label>
-    <div class="col-md-4">
-      <input type="file" class="form-control" id="pic" name="pic">
-    </div>
-  </div>
 
-<div class="form-group" >
-  <div class="col-sm-offset-2 col-sm-10">
-<button type="submit" class="btn btn-primary">Submit</button>
-  </div>
+<div class="container">
+    <hr>
+    <div class="page-header">
+        <h1>Registration</h1>
+    </div>
+    <form class="form-horizontal" method="post">
+        <div class="row">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="username">用户名</label>
+                    <div class="controls">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">密码</label>
+                    <div class="controls">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password-repeat">确认密码</label>
+                    <div class="controls">
+                        <input type="password" class="form-control" id="password-repeat" name="password-repeat" placeholder="确认密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="wechat">微信号</label>
+                    <div class="controls">
+                        <input type="text" class="form-control" id="wechat" name="wechat" placeholder="微信号">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="qq">QQ</label>
+                    <div class="controls">
+                        <input type="text" class="form-control" id="qq" name="qq" placeholder="QQ">
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img data-src="holder.js/100%x200" alt="">
+                        </li>
+                    </ul>
+                    <span class="help-block"><strong>亲，上传你的美照哦～</strong></span>
+                    <input type="file" class="form-control" id="pic" name="pic" value="上传你的真容">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">加入love仙林</button>
+    </form>
 </div>
-</fieldset>
-</form>
+
 
 <% include footer.ejs %>

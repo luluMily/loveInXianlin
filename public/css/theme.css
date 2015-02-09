@@ -1,7 +1,16 @@
 a, input, select, textarea {outline:none !important;
 }
 body { overflow-x:hidden;
+	background-color: transparent;
 }
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12{
+    padding-right: 15px;
+    padding-left: 15px;
+}*/
 .font {
 	font-family: 'Open Sans', sans-serif;
 	font-weight:400; /*Normal*/
@@ -31,6 +40,7 @@ img {
 }
 .logo img {max-width:100%;
 }
+
 
 .navbar{
 	margin-bottom: 5px
@@ -65,13 +75,13 @@ img {
 .follow_us a.account {background-position:0 0;
 }
 .follow_us a.login:hover,
-.follow_us a.account {background-position:0 -30px;
+.follow_us a.account:hover {background-position:0 -30px;
 }
 .follow_us a.reg,
-.foller_us a.logout {background-position:-85px 0;
+.follow_us a.logout {background-position:-85px 0;
 }
 .follow_us a.reg:hover,
-.foller_us a.logout {background-position:-85px -30px;
+.follow_us a.logout:hover {background-position:-85px -30px;
 }
 
 

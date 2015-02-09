@@ -13,8 +13,12 @@ router.get('/', function(req, res, next) {
 */
 
 
-router.get('/account', function(req, res, next) {
-  res.render('account', { title: '我的主页', source: 'uploads/test.jpg' });
+router.get('/', function(req, res, next) {
+  res.render('activity', { title: '联谊' });
+});
+
+router.get('/new', function(req, res, next) {
+  res.render('createActivity', { title: '联谊搞起' });
 });
 
 module.exports = router;

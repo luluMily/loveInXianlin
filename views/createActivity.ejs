@@ -1,0 +1,52 @@
+<% include header.ejs %>
+
+<form class="form-horizontal" method="post">
+<fieldset>
+<legend>User Registration</legend>
+	<div class="form-group">
+    <label for="username" class="col-sm-2 control-label">活动名</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="username" name="activityName" placeholder="活动名">
+      <p class="help-block">Your Account Number</p>
+    </div>
+  </div>
+
+	<div class="form-group">
+    <label for="username" class="col-sm-2 control-label">活动时间</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="username" name="activityTime" placeholder="活动时间">
+      <p class="help-block">Your Account Number</p>
+    </div>
+  </div>
+
+	<div class="form-group">
+    <label for="username" class="col-sm-2 control-label">活动地点</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="username" name="activityLocation" placeholder="活动地点">
+      <p class="help-block">Your Account Number</p>
+    </div>
+  </div>
+  
+	<div class="form-group">
+    <label for="text" class="col-md-2 control-label">活动联系人微信号</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="wechat" name="wechat" placeholder="微信号">
+    </div>
+  </div>
+	<div class="form-group">
+    <label for="password-repeat" class="col-md-2 control-label">活动联系人QQ</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="qq" name="qq" placeholder="QQ">
+    </div>
+  </div>
+
+
+<div class="form-group" >
+  <div class="col-sm-offset-2 col-sm-10">
+<button type="submit" class="btn btn-primary">Update</button>
+  </div>
+</div>
+</fieldset>
+</form>
+
+<% include footer.ejs %>

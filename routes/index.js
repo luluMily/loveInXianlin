@@ -9,13 +9,22 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '首页' });
+	if(!req.session.user)
+  	res.render('index', { title: '首页' });
+	if(req.session.user)
+		res.render('index', { title: '首页', username: req.session.user.name })
 });
 
+router.get('/heartseek', function(req, res, next) {
+    res.render('heartseek', { title: '寻TA' });
+});
+
+router.get('/reg',checkNotLogin);
 router.get('/reg', function(req, res, next) {
   res.render('reg', { title: '注册' });
 });
 
+router.post('/reg',checkNotLogin);
 router.post("/reg",function(req,res){
 	console.log(req.body);
 	//检验用户两次输入口令是否一致
@@ -64,9 +73,45 @@ router.post("/reg",function(req,res){
 });
 
 
+router.get('/login',checkNotLogin);
 router.get('/login', function(req, res, next) {
   res.render('login', { title: '登录' });
 });
+
+
+router.post('/login',checkNotLogin);
+router.post("/login",function(req,res){
+	//生成口令的散列值
+	var md5 = crypto.createHash('md5');
+	var password = md5.update(req.body.password).digest('base64');
+
+	User.get(req.body.username,function(err,user){
+		if(!user){
+			req.flash('error','User Not Found');
+			return res.redirect('/login');
+		}
+		if(user.password!=password){
+			req.flash('error','Wrong Password');
+			return res.redirect('/login');
+		}
+		req.session.user = user;
+		req.flash('success','Successfully Log In');
+		res.redirect('/');
+	});
+});
+
+
+router.get("/logout",checkLogin);
+router.get("/logout",function(req,res){
+	req.session.user = null;
+	req.flash('success','Successfully Log Out');
+	res.redirect('/');
+});
+/*
+router.get('/account', function(req, res, next) {
+  res.render('account', { title: '用户' });
+});
+*/
 
 router.get('/upload', function(req, res, next) {
   res.render('upload', { title: '上传' });
@@ -113,7 +158,7 @@ router.post('/upload', function(req, res) {
 */
 
 //        var avatarName = Math.random() + "." + extName;
-				var avatarName = Math.random();
+				var avatarName = test.jpg;
         var newPath = form.uploadDir + avatarName;
 
         console.log(newPath);
@@ -125,6 +170,29 @@ router.post('/upload', function(req, res) {
 		return res.redirect('/upload');
 		       
 });
+
+router.get('/contact_us', function(req, res, next) {
+  res.render('contactUs', { title: '联系我们' });
+});
+
+
+
+function checkLogin(req,res,next){
+	if(!req.session.user){
+//		req.flash('error',"需要先登录哦");
+		return res.redirect('/login');
+	}
+	next();
+};
+
+function checkNotLogin(req,res,next){
+	if(req.session.user){
+//		req.flash("error","您已登录");
+		return res.redirect('/');
+	}
+	next();
+};
+
 
 
 module.exports = router;
